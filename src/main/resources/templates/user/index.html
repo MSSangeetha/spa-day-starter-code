@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8" />
+    <title>Spa Menu</title>
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+<body>
+
+<h1>Welcome!
+</h1>
+<h1 th:text="${title}"></h1>
+<table>
+
+    <tr>
+        <th>ID</th>
+        <th>UserName</th>
+    </tr>
+
+    <tr th:each="user : ${users}">
+        <td th:text = "${user.id}"></td>
+        <td th:text = "${user.username}"></td>
+
+    </tr>
+    <tr><a th:href="@{/}">Go to Service Selection</a></tr>
+</table>
+
+</body>
+</html>

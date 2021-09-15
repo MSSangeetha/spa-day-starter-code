@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8" />
+    <title>Spa Menu</title>
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+<body>
+<form method="post" action="/user/add">
+    <div class="form-group">
+        <label>Name :
+<!--        <span th:text="${user.username}"></span>-->
+<!--            <input type="text" name="username" th:value="${users.username}" />-->
+            <input type="text" name="username" th:value="${username}"/>
+        </label>
+<br>
+        <br>
+        <label>Email :
+
+<!--            <input type="email" name="email" th:value="${users.email}">-->
+            <input type="email" name="email" th:value="${email}"/>
+        </label>
+<br>
+        <br>
+        <label>Password :
+
+<!--            <input type="password" name="password" th:value="${users.password}">-->
+            <input type="password" name="password" />
+        </label>
+
+        <label>Confirm Password :
+            <!--            <span th:text="${user.password}"></span>-->
+            <input type="password" name="verify" >
+
+            <!--            <input type="password" name="password" />-->
+        </label>
+        <p th:if="${errormessage} == no" style="color:red; font-weight:bold;">Password not matching</p>
+<!--        <p th:if="${verify} != ${passwrod}" th:text="${errormessage}" style="color:red; font-weight:bold;"></p>-->
+
+    <br>
+
+    <div class="form-group">
+        <input type="submit" value="Create User" class="btn btn-success">
+    </div>
+    </div>
+</form>
+
+</body>
+</html>
