@@ -11,16 +11,18 @@ private int id;
     private String password;
 
     //Constructors
-    public User(){
-        this.id = nextId;
-        nextId++;
-    }
+//    public User(){
+//        this.id = nextId;
+//        nextId++;
+//    }
 
-    public User(String username, String email, String password) {
-        this();
+    public User(String id,String username, String email, String password) {
+//        this();
+        this.id = nextId;
         this.username = username;
         this.email = email;
         this.password = password;
+        nextId++;
     }
 
     //Getters and Setters

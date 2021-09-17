@@ -22,8 +22,9 @@ public class UserController {
 
     //Handler method to render the form
     @GetMapping("add")
-    public String displayAddUserForm(Model model){
-        model.addAttribute("users", new User());
+    public String displayAddUserForm(Model model,@ModelAttribute User user){
+//        model.addAttribute("users", new User());
+        model.addAttribute("users", user);
         return "user/add";
 //    public String displayAddUserForm(@ModelAttribute User users){
 //        UserData.add(users);
@@ -33,9 +34,6 @@ public class UserController {
     @PostMapping("add")
     public String processAddUserForm(Model model, @ModelAttribute User user, String verify) {
         // add form submission handling code here
-
-
-
         if(verify.equals(user.getPassword())){
             UserData.add(user);
             model.addAttribute("username",user.getUsername());
