@@ -11,26 +11,30 @@
         <label>Name :
 <!--        <span th:text="${user.username}"></span>-->
 <!--            <input type="text" name="username" th:value="${users.username}" />-->
-            <input type="text" name="username" th:value="${username}"/>
+            <input th:field="${user.username}"/>
+            <p class="error" th:errors="${user.username}"></p>
         </label>
 <br>
         <br>
         <label>Email :
 
 <!--            <input type="email" name="email" th:value="${users.email}">-->
-            <input type="email" name="email" th:value="${email}"/>
+            <input th:field="${user.email}"/>
+            <p class="error" th:errors="${user.email}"></p>
         </label>
 <br>
         <br>
         <label>Password :
 
 <!--            <input type="password" name="password" th:value="${users.password}">-->
-            <input type="password" name="password" />
+            <input th:field="${user.password}" />
+            <p class="error" th:errors="${user.password}"></p>
         </label>
 
         <label>Confirm Password :
             <!--            <span th:text="${user.password}"></span>-->
             <input type="password" name="verify" >
+<!--            <p class="error" th:errors="${user.verifyPassword}"></p>-->
 
             <!--            <input type="password" name="password" />-->
         </label>
